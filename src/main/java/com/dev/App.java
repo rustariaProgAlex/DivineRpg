@@ -37,6 +37,8 @@ public class App extends Application {
         imitButton();
         initStats();
         //huis
+        //jopa
+    
     }
 
     static void setRoot(String fxml) throws IOException {
