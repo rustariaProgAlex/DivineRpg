@@ -36,7 +36,7 @@ public class App extends Application {
         script = (Label)scene.lookup("#script");
         imitButton();
         initStats();
-        //hui
+        //huis
     }
 
     static void setRoot(String fxml) throws IOException {
