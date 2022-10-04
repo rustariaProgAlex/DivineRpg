@@ -26,6 +26,7 @@ public class App extends Application {
 
     private static Scene scene;
     private static Label script;
+    private static VBox btnBox;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -36,7 +37,6 @@ public class App extends Application {
         script = (Label)scene.lookup("#script");
         imitButton();
         initStats();
-    // Hello
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -121,6 +121,9 @@ public class App extends Application {
         }
 public static Label getScript() {
     return script;
+}
+public static VBox getBtnBox() {
+    return btnBox;
 }
 }
 
