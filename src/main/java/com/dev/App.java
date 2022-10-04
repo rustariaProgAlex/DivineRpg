@@ -36,7 +36,7 @@ public class App extends Application {
         script = (Label)scene.lookup("#script");
         imitButton();
         initStats();
-
+//Sanya 
     
     }
 
