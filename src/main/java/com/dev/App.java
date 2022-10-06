@@ -26,7 +26,7 @@ public class App extends Application {
 
     private static Scene scene;
     private static Label script;
-    private static VBox btnBox;
+    private static VBox btnBox; 
 
     @Override
     public void start(Stage stage) throws IOException {

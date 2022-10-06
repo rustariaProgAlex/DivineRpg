@@ -5,13 +5,14 @@ import com.dev.App;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.VBox;//0x02 -0x01()
+//0x03 - 0x01
 
 public class SkillMenu {
 
     public static void showSkillMenu() {
-        VBox btnBox = App.getBtnBox();
-        Button strBtn = new Button("1");
+        VBox btnBox = App.getBtnBox(); 
+        Button strBtn = new Button("1"); 
         Button dexBtn = new Button("2");
         Button magBtn = new Button("3");
         App.getScript().setText("Выбирите куда хоити потритить очки навыков \n"
