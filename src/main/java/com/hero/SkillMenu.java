@@ -5,47 +5,72 @@ import com.dev.App;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;//0x02 -0x01()
-//0x03 - 0x01
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+
 
 public class SkillMenu {
+    private static boolean isCancel = true;
 
     public static void showSkillMenu() {
+        
         VBox btnBox = App.getBtnBox(); 
         Button strBtn = new Button("1"); 
         Button dexBtn = new Button("2");
         Button magBtn = new Button("3");
-        App.getScript().setText("Выбирите куда хоити потритить очки навыков \n"
-                + "1. STR = " + Player.getSTR() + "\n"
-                + "2. DEX = " + Player.getDEX() + "\n"
-                + "3. MAG = " + Player.getMAG());
+        Button cancelBtn = new Button("0");
+        btnBox.getChildren().clear();
         btnBox.getChildren().add(strBtn);
         btnBox.getChildren().add(dexBtn);
         btnBox.getChildren().add(magBtn);
         strBtn.setOnAction(new EventHandler<ActionEvent>() {
-
+            
             @Override
             public void handle(ActionEvent arg0) {
+                
                 Player.setSTR(Player.getSTR() + 1);
             }
-
+            
         });
         dexBtn.setOnAction(new EventHandler<ActionEvent>() {
-
+            
             @Override
             public void handle(ActionEvent arg0) {
-                Player.setDEX(Player.getDEX() + 1);
-            }
+                Player.setDEX(Player.getSTR() + 1);
 
+            }
+            
         });
         magBtn.setOnAction(new EventHandler<ActionEvent>() {
-
+            
             @Override
             public void handle(ActionEvent arg0) {
-                Player.setMAG(Player.getMAG() + 1);
-            }
+                Player.setMAG(Player.getSTR() + 1);
 
+            }
+            
         });
+        cancelBtn.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent arg0) {
+                isCancel = false;
+            }
+            
+        });
+        
+        while(Player.getSkillPoints() != 0 && isCancel) {
+         App.getScript().setText("Выбирите куда хоити потритить очки навыков \n"
+                 + "1. STR = " + Player.getSTR() + "\n"
+                 + "2. DEX = " + Player.getDEX() + "\n"
+                 + "3. MAG = " + Player.getMAG() + "\n"
+                 + "0. Выход " );
+     }
+        
+ 
+
+
+
 
     }
 

@@ -26,8 +26,7 @@ public class App extends Application {
 
     private static Scene scene;
     private static Label script;
-    private static VBox btnBox; 
-
+    private static VBox btnBox;
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("main"), 640, 480);
@@ -35,8 +34,9 @@ public class App extends Application {
         stage.show();
         Stats.defaultStats();
         script = (Label)scene.lookup("#script");
-        imitButton();
+        btnBox = (VBox)scene.lookup("#actionBox");
         initStats();
+        imitButton();
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -124,6 +124,6 @@ public static Label getScript() {
 }
 public static VBox getBtnBox() {
     return btnBox;
-}
-}
+
+}}
 

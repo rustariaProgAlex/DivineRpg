@@ -10,5 +10,6 @@ public class Stats {
         Player.setStamina(Player.getMaxStamina());
         Player.setArmor(0);
         Player.setDamage(0);
+        Player.setSkillPoints(5);
     }
 }
