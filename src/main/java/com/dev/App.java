@@ -125,5 +125,9 @@ public static Label getScript() {
 public static VBox getBtnBox() {
     return btnBox;
 
-}}
+}
+public static void setScript(Label script) {
+    App.script = script;
+}
+}
 

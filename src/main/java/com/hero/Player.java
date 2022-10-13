@@ -1,7 +1,6 @@
 package com.hero;
 
-public class Player
-{
+public class Player{
 private static int hp;
 private static int stamina;
 private static int mana;
@@ -53,6 +52,7 @@ public static int getDamage() {
 }
 public static void setDamage(int damage) {
     Player.damage = damage;
+
 }
 public static int getLucky() {
     return lucky;
@@ -88,6 +88,8 @@ public static int getSTR() {
     return STR;
 }
 public static void setSTR(int sTR) {
+    Player.damage += 3;
+    Player.maxHp += 5;
     STR = sTR;
 }
 public static int getDEX() {

@@ -1,8 +1,16 @@
 package com.location;
 
+import java.util.Random;
+
 public class Location {
     private int dist;
     private String name;
+    public Location(String name){
+        dist = new Random().nextInt(10) + 10;
+        this.name = name;
+        
+    }
+    public static void 
     public int getDist() {
         return dist;
     }
