@@ -13,8 +13,6 @@ public class Main {
 
     }
     public static void locationHandler(){
-        Location location = FileListener.nashmethod();
-        currentLocation = location;
     } 
     
     

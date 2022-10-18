@@ -29,6 +29,7 @@ public class SkillMenu {
             public void handle(ActionEvent arg0) {
                 madifBtn = "str";
                 skillPointsCounter();
+                
             }
 
         });

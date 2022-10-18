@@ -1,6 +1,6 @@
 $LocationForest_1
 {
-    name: "Темный лес",
+    name:"Dark forest",
     dist: 12,
     type: "Forest",
     links: 
@@ -11,7 +11,7 @@ $LocationForest_1
 }
 $LocationCave_1
 {
-    name: "Темный лес",
+    name: "Big cave",
     dist: 12,
     type: "Cave",
     links: 
@@ -21,7 +21,7 @@ $LocationCave_1
 }
 $LocationForest_2
 {
-    name: "Лес",
+    name: "Forest",
     dist: 12,
     type: "Forest",
     links: 

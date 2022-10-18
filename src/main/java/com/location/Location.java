@@ -1,16 +1,17 @@
 package com.location;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Location {
     private int dist;
     private String name;
-    public Location(String name){
-        dist = new Random().nextInt(10) + 10;
+    private String type;
+    private ArrayList<String> links;
+    public Location(String name, int dist, String  type, ArrayList<String> links){
         this.name = name;
         
     }
-    public static void 
     public int getDist() {
         return dist;
     }

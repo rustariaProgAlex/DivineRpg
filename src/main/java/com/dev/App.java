@@ -87,6 +87,7 @@ public class App extends Application {
             @Override
             public void handle(ActionEvent arg0) {
                 script.setText(FileListener.textReading("start_1", path));
+                FileListener.locationReader("D:/DivineRpg/divine_rpg/dev/DivineRpg/plot/locations.txt", "LocationForest_1");
             }
             
         });
