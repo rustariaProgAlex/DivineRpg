@@ -2,6 +2,8 @@ package com.dev;
 
 import com.files.FileListener;
 import com.hero.*;
+import com.location.Location;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -86,8 +88,7 @@ public class App extends Application {
 
             @Override
             public void handle(ActionEvent arg0) {
-                script.setText(FileListener.textReading("start_1", path));
-                FileListener.locationReader("plot/locations.txt", "LocationForest_1");
+                script.setText(FileListener.textReading("start_1", path));                
             }
             
         });

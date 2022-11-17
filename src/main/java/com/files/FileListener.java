@@ -6,12 +6,14 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 import com.location.Location;
 
 import javafx.scene.shape.Line;
 
 public class FileListener {
+
     public static String textReading(String id, String path) {
         StringBuilder sb = null;
         try {
@@ -54,8 +56,8 @@ public class FileListener {
                 if (line.contains("$") && line.contains(id)) {
                     pass = true;
                 }
-                if (pass && !line.contains("$") && !line.contains("{") && !line.contains("}")) {
-                    sb.append(line + "\n");
+                if (pass && !line.contains("{") && !line.contains("}")) {
+                    sb.append(line.replace(" " , "" ).replace(",", "") + "\n");
                 }
                 line = reader.readLine();
             }
@@ -70,7 +72,8 @@ public class FileListener {
         int dist = 0;
         String name = "";
         String type = "";
-        ArrayList<String> links;
+        ArrayList<String> links = new ArrayList<>();
+
        for(int i = 0; i < fields.length; i++ ){
         if(fields[i].contains("name")){
             name = fields[i].split("\"")[1];
@@ -91,7 +94,6 @@ public class FileListener {
             }
         }
        }
-
-        return null;
+        return new Location(name, dist, type, links);
     }
 }

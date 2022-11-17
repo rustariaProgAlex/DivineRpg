@@ -10,6 +10,10 @@ public class Location {
     private ArrayList<String> links;
     public Location(String name, int dist, String  type, ArrayList<String> links){
         this.name = name;
+        this.dist = dist;
+        this.type = type;
+        this.links = links;
+        
         
     }
     public int getDist() {
