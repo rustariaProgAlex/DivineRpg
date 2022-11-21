@@ -39,6 +39,7 @@ public class App extends Application {
         btnBox = (VBox)scene.lookup("#actionBox");
         initStats();
         imitButton();
+        Main.travel();        
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -84,14 +85,7 @@ public class App extends Application {
         
         String path = "plot/start.txt";
 
-        firstButton.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent arg0) {
-                script.setText(FileListener.textReading("start_1", path));                
-            }
-            
-        });
+        firstButton.setOnAction((e) -> {script.setText(FileListener.textReading("start_1", path));});
         secondButton.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
