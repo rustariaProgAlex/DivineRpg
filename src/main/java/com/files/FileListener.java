@@ -41,7 +41,8 @@ public class FileListener {
         return sb.toString().replace("null", "");
     }
 
-    public static Location locationReader(String path, String id) {
+    public static Location locationReader(String id) {
+        String path = "plot/locations.txt";
         StringBuilder sb = null;
         BufferedReader reader;
         try {
@@ -53,7 +54,7 @@ public class FileListener {
                 if (line.contains("}") && pass) {
                     break;
                 }
-                if (line.contains("$") && line.contains(id)) {
+                if (line.contains(id) && line.contains("$")) {
                     pass = true;
                 }
                 if (pass && !line.contains("{") && !line.contains("}")) {

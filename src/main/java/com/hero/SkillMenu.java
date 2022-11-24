@@ -1,6 +1,7 @@
 package com.hero;
 
 import com.dev.App;
+import com.dev.Main;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,11 +18,13 @@ public class SkillMenu {
         Button strBtn = new Button("1");
         Button dexBtn = new Button("2");
         Button magBtn = new Button("3");
-        Button cancelBtn = new Button("0");
+        Button cancelBtn = new Button("Выход");
         btnBox.getChildren().clear();
         btnBox.getChildren().add(strBtn);
         btnBox.getChildren().add(dexBtn);
         btnBox.getChildren().add(magBtn);
+        btnBox.getChildren().add(cancelBtn);
+
         updateSkillPoint();
         strBtn.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -56,6 +59,7 @@ public class SkillMenu {
 
             @Override
             public void handle(ActionEvent arg0) {
+                Main.travel();
             }
 
         });
@@ -85,7 +89,7 @@ public class SkillMenu {
             Player.setSkillPoints(Player.getSkillPoints() - 1);
             SkillMenu.updateSkillPoint();
         } else {
-            App.getScript().setText("У вас кончились очки навыков, для выхода из меню нажмите 4");
+            App.getScript().setText("У вас кончились очки навыков, для выхода из меню нажмите выход");
         }
     }
 }

@@ -29,17 +29,18 @@ public class App extends Application {
     private static Scene scene;
     private static Label script;
     private static VBox btnBox;
+
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("main"), 640, 480);
-        stage.setScene(scene);  
+        stage.setScene(scene);
         stage.show();
+        
         Stats.defaultStats();
-        script = (Label)scene.lookup("#script");
-        btnBox = (VBox)scene.lookup("#actionBox");
+        script = (Label) scene.lookup("#script");
+        btnBox = (VBox) scene.lookup("#actionBox");
         initStats();
-        imitButton();
-        Main.travel();        
+        Main.showStartDialog();
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -53,77 +54,35 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
-    } 
-    private static void initStats(){
-        Label hp = (Label)scene.lookup("#hp");
-        Label maxHp = (Label)scene.lookup("#maxHp");
-        Label stamina = (Label)scene.lookup("#stamina");
-        Label maxStamina = (Label)scene.lookup("#maxStamina");
-        Label mana = (Label)scene.lookup("#mana");
-        Label maxMana = (Label)scene.lookup("#maxMana");
+    }
 
-  
+    private static void initStats() {
+        Label hp = (Label) scene.lookup("#hp");
+        Label maxHp = (Label) scene.lookup("#maxHp");
+        Label stamina = (Label) scene.lookup("#stamina");
+        Label maxStamina = (Label) scene.lookup("#maxStamina");
+        Label mana = (Label) scene.lookup("#mana");
+        Label maxMana = (Label) scene.lookup("#maxMana");
+
         hp.setText(String.valueOf(Player.getHp()));
         maxHp.setText(String.valueOf(Player.getMaxHp()));
         stamina.setText(String.valueOf(Player.getStamina()));
         maxStamina.setText(String.valueOf(Player.getMaxStamina()));
         mana.setText(String.valueOf(Player.getMana()));
         maxMana.setText(String.valueOf(Player.getMaxMana()));
-       
 
     }
-    private static void imitButton(){
-        VBox btnBox = (VBox)scene.lookup("#actionBox");
-        Button firstButton = new Button("1");
-        Button secondButton = new Button("2");
-        Button thirdButton = new Button("3");
-        Button fourthButton = new Button("4");
-        btnBox.getChildren().add(firstButton);
-        btnBox.getChildren().add(secondButton);
-        btnBox.getChildren().add(thirdButton);
-        btnBox.getChildren().add(fourthButton);
-        
-        String path = "plot/start.txt";
 
-        firstButton.setOnAction((e) -> {script.setText(FileListener.textReading("start_1", path));});
-        secondButton.setOnAction(new EventHandler<ActionEvent>() {
+    public static Label getScript() {
+        return script;
+    }
 
-            @Override
-            public void handle(ActionEvent arg0) {
-                script.setText(FileListener.textReading("start_2", path));
-                
-            }
-            
-        });
-        thirdButton.setOnAction(new EventHandler<ActionEvent>() {
+    public static VBox getBtnBox() {
+        return btnBox;
 
-            @Override
-            public void handle(ActionEvent arg0) {
-                script.setText(FileListener.textReading("start_3", path));
-                
-            }
-            
-        });
-        fourthButton.setOnAction(new EventHandler<ActionEvent>() {
+    }
 
-            @Override
-            public void handle(ActionEvent arg0) {
-                SkillMenu.showSkillMenu();
-                
-            }
-            
-        });
-
-        }
-public static Label getScript() {
-    return script;
+    public static void setScript(Label script) {
+        App.script = script;
+    }
 }
-public static VBox getBtnBox() {
-    return btnBox;
-
-}
-public static void setScript(Label script) {
-    App.script = script;
-}
-}
-

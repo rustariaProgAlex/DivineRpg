@@ -1,31 +1,56 @@
 $LocationForest_1
 {
-    name:"Dark forest",
-    dist: "12",
+    name:"Dark forest1",
+    dist: "1",
     type: "Forest",
     links: 
     [
-       $LocationCave_1,
-       $LocationForest_2
+       LocationCave_1,
+       LocationForest_2
     ]
 }
 $LocationCave_1
 {
-    name: "Big cave",
-    dist: "12",
+    name: "Big cave1",
+    dist: "1",
     type: "Cave",
     links: 
     [
-        $LocationForest_1
+        LocationCave_2
+        LocationForest_1
+    ]
+}
+$LocationCave_2
+{
+    name: "Big cave2",
+    dist: "1",
+    type: "Cave",
+    links: 
+    [
+        LocationForest_3
+        LocationCave_1
     ]
 }
 $LocationForest_2
 {
-    name: "Forest",
-    dist: "12",
+    name: "Forest2",
+    dist: "1",
     type: "Forest",
     links: 
     [
-        $LocationForest_1
+        LocationForest_1
+        LocationForest_3
+
+    ]
+}
+$LocationForest_3
+{
+    name: "Forest3",
+    dist: "1",
+    type: "Forest",
+    links: 
+    [
+        LocationForest_2
+        LocationCave_2
     ]
 }

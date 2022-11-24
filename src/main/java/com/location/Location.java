@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Location {
-    private int dist;
+    private int dist = 1;
     private String name;
     private String type;
     private ArrayList<String> links;
@@ -27,6 +27,9 @@ public class Location {
     }
     public void setName(String name) {
         this.name = name;
+    }
+    public ArrayList<String> getLinks() {
+        return links;
     }
          
 }
