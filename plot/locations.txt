@@ -39,8 +39,7 @@ $LocationForest_2
     links: 
     [
         LocationForest_1
-        LocationForest_3
-
+        LocationForest_3       
     ]
 }
 $LocationForest_3

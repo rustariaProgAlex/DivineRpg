@@ -41,7 +41,6 @@ public class Main {
                     Platform.runLater(() -> {
                         App.getBtnBox().getChildren().clear();
                     });
-
                     for (int i = 0; i < currentLocation.getLinks().size(); i++) {
                         Location newLoc = FileListener.locationReader(currentLocation.getLinks().get(i));
                         Button locationBtn = new Button(newLoc.getName());
@@ -51,6 +50,7 @@ public class Main {
                         locationBtn.setOnAction((e) -> {
                             currentLocation = newLoc;
                             showTravelMenu();
+                            System.out.println(currentLocation.getLinks());
                         });
                         
 
